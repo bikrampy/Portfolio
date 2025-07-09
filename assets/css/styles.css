@@ -302,6 +302,9 @@ img {
 .skills__python {
   width: 90%;
 }
+.skills__github {
+  width: 85%;
+}
 .skills__img {
   border-radius: 0.5rem;
 }
