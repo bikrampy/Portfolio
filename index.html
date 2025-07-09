@@ -256,21 +256,38 @@
         <h2 class="section-title">Contact</h2>
 
         <div class="contact__container bd-grid">
-          <form action="" class="contact__form">
-            <input type="text" placeholder="Name" class="contact__input" />
-            <input type="mail" placeholder="Email" class="contact__input" />
+          <form onsubmit="return sendMail()" id="contact-form" class="contact__form">
+            <input
+              type="text"
+              id="name"
+              placeholder="Name"
+              name="name"
+              class="contact__input"
+              required
+            />
+            <input
+              type="mail"
+              id="mail"
+              placeholder="Email"
+              name="mail"
+              class="contact__input"
+              required
+            />
             <textarea
-              name=""
-              id=""
+              name="message"
+              id="message"
+              placeholder="Message"
               cols="0"
               rows="10"
               class="contact__input"
+              required
             ></textarea>
-            <input
-              type="button"
-              value="Contact"
+            <button
+              type="submit"
               class="contact__button button"
-            />
+            >
+              Submit
+            </button>
           </form>
         </div>
       </section>
@@ -295,5 +312,18 @@
 
     <!--===== MAIN JS =====-->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/email.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "mdjrBOy-Pdp5mIKp9",
+        });
+      })();
+    </script>
   </body>
 </html>
