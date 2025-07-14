@@ -107,7 +107,7 @@
       <section class="home bd-grid" id="home">
         <div class="home__data">
           <h1 class="home__title">
-            Hi,<br />I'am <span class="home__title-color">Bikram</span><br />
+            Hi,<br />I'm <span class="home__title-color">Bikram</span><br />
             Python Developer <br />
             Web Developer
           </h1>
@@ -180,7 +180,6 @@
 
         <div class="skills__container bd-grid">
           <div>
-            <h2 class="skills__subtitle">I am proficient in</h2>
             <h2 class="skills__subtitle">Frontend Frameworks</h2>
             <div class="skills__data">
               <div class="skills__names">
@@ -234,6 +233,16 @@
                 <span class="skills__percentage">85%</span>
               </div>
             </div>
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="bx bxl-git skills__icon"></i>
+                <span class="skills__name">GIT</span>
+              </div>
+              <div class="skills__bar skills__git"></div>
+              <div>
+                <span class="skills__percentage">65%</span>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -267,7 +276,11 @@
         <h2 class="section-title">Contact</h2>
 
         <div class="contact__container bd-grid">
-          <form onsubmit="return sendMail()" id="contact-form" class="contact__form">
+          <form
+            onsubmit="return sendMail()"
+            id="contact-form"
+            class="contact__form"
+          >
             <input
               type="text"
               id="name"
@@ -293,12 +306,7 @@
               class="contact__input"
               required
             ></textarea>
-            <button
-              type="submit"
-              class="contact__button button"
-            >
-              Submit
-            </button>
+            <button type="submit" class="contact__button button">Submit</button>
           </form>
         </div>
       </section>
