@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Being Bifrons</title>
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        // We'll add custom colors, fonts, or utility classes here later if needed
+                        colors: {
+                            "primary-blue": "#60a5fa", // Equivalent to the original --first-color: #60a5fa
+                        },
+                        maxWidth: {
+                            // Equivalent to the original .max-w-site: max-width: 1100px;
+                            site: "1100px",
+                        },
+                    },
+                },
+            };
+        </script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        ></script>
+        <script type="text/javascript">
+            (function () {
+                // ⚠️ IMPORTANT: Replace with your actual Public Key from EmailJS Account > API Keys
+                emailjs.init("mdjrBOy-Pdp5mIKp9");
+            })();
+        </script>
+    </head>
+    <body class="bg-black text-slate-200 antialiased leading-relaxed">
+        <div
+            id="preloader"
+            class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center transition-opacity duration-700"
+        >
+            <div
+                class="relative w-64 h-2 bg-slate-800 rounded-full overflow-hidden"
+            >
+                <div
+                    class="absolute top-0 left-0 h-full w-1/2 bg-gradient-to-r from-transparent via-primary-blue to-transparent animate-shimmer"
+                ></div>
+            </div>
+
+            <div class="mt-4 flex items-center gap-2">
+                <span
+                    class="w-2 h-2 bg-primary-blue rounded-full animate-ping"
+                ></span>
+                <span class="text-slate-400 text-sm tracking-widest"
+                    >BeingBifrons</span
+                >
+            </div>
+        </div>
+        <header class="fixed top-0 inset-x-0 bg-black/60 backdrop-blur z-50">
+            <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <a
+                        href="#home"
+                        class="text-xl font-semibold tracking-tight text-white"
+                    >
+                        Bikram Saha
+                    </a>
+
+                    <nav class="hidden md:flex items-center space-x-6">
+                        <a
+                            class="text-slate-300 hover:text-white nav-link"
+                            href="#home"
+                            >Home</a
+                        >
+                        <a
+                            class="text-slate-300 hover:text-white nav-link"
+                            href="#about"
+                            >About</a
+                        >
+                        <a
+                            class="text-slate-300 hover:text-white nav-link"
+                            href="#skills"
+                            >Skills</a
+                        >
+                        <a
+                            class="text-slate-300 hover:text-white nav-link"
+                            href="#projects"
+                            >Projects</a
+                        >
+                        <a
+                            class="block px-3 py-2 rounded-xl-strong font-medium glow-btn glow-btn--strong text-center"
+                            href="#contact"
+                        >
+                            Contact
+                        </a>
+                    </nav>
+
+                    <div class="md:hidden">
+                        <button
+                            id="menu-btn"
+                            aria-label="Open menu"
+                            class="p-2 rounded-md hover:bg-white/5"
+                        >
+                            <i class="bx bx-menu text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="mobile-menu"
+                class="md:hidden hidden border-t border-white/5"
+            >
+                <div class="px-4 pt-4 pb-6 space-y-3">
+                    <a href="#home" class="block nav-link px-2 py-2 rounded"
+                        >Home</a
+                    >
+                    <a href="#about" class="block nav-link px-2 py-2 rounded"
+                        >About</a
+                    >
+                    <a href="#skills" class="block nav-link px-2 py-2 rounded"
+                        >Skills</a
+                    >
+                    <a href="#projects" class="block nav-link px-2 py-2 rounded"
+                        >Projects</a
+                    >
+                    <a
+                        href="#contact"
+                        class="block px-2 py-2 rounded-xl-strong font-medium glow-btn glow-btn--strong text-center"
+                        >Contact</a
+                    >
+                </div>
+            </div>
+        </header>
+        <main class="pt-4">
+            <section id="home" class="min-h-screen flex items-center">
+                <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+                    >
+                        <div class="space-y-6">
+                            <h1
+                                class="text-4xl sm:text-5xl font-extrabold min-h-20 sm:min-h-24 flex items-center"
+                            >
+                                <span id="typewriter" class="text-white"></span>
+                                <span
+                                    class="text-primary-blue animate-pulse ml-1"
+                                    >|</span
+                                >
+                            </h1>
+                            <p class="text-slate-300 max-w-xl">
+                                I'm a
+                                <strong>full-stack enthusiast</strong> focused
+                                on Web Development, and building clean,
+                                accessible interfaces. I build projects that I
+                                can learn from — and that help others learn too.
+                            </p>
+
+                            <div class="flex items-center space-x-4 pt-3">
+                                <a
+                                    href="#projects"
+                                    class="px-5 py-3 rounded-xl-strong glow-btn glow-btn--strong inline-block"
+                                    >See Projects</a
+                                >
+                                <a
+                                    href="./assets/pdf/Bikram_Saha_Resume.pdf"
+                                    target="_blank"
+                                    class="px-4 py-3 rounded-xl-strong anim-only-btn inline-block bg-white text-black"
+                                    >View CV</a
+                                >
+                            </div>
+
+                            <div class="flex items-center space-x-4 pt-6">
+                                <a
+                                    href="https://github.com/bikrampy"
+                                    target="_blank"
+                                    class="text-slate-300 hover:text-white flex items-center gap-2"
+                                >
+                                    <i class="bx bxl-github text-2xl"></i>
+                                    <span class="hidden sm:inline">GitHub</span>
+                                </a>
+                                <a
+                                    href="https://x.com/beingbifrons"
+                                    target="_blank"
+                                    class="text-slate-300 hover:text-white flex items-center gap-2"
+                                >
+                                    <i class="bx bxl-twitter text-2xl"></i>
+                                    <span class="hidden sm:inline"
+                                        >X(Twitter)</span
+                                    >
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center md:justify-end">
+                            <div
+                                class="w-72 h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden transform-gpu avatar-mask"
+                            >
+                                <div class="hero-image-wrap w-full h-full">
+                                    <div class="hero-wrap-inner">
+                                        <img
+                                            src="./assets/img/PP_Resume.png"
+                                            alt="Bikram"
+                                            class="animate-float transition-transform duration-700 rounded-3xl"
+                                        />
+                                        <div class="hero-overlay"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="about" class="py-20 border-t border-white/5">
+                <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold mb-4 text-white">About</h2>
+                    <p class="text-slate-300 max-w-3xl">
+                        I am a B.Tech student at Brainware University, located
+                        in Barasat, Kolkata. I am passionate about technology
+                        and eager to learn and grow in the field of computer
+                        science.
+                    </p>
+
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-5 bg-white/5 rounded-lg">
+                            <h3 class="font-semibold">📍 Location</h3>
+                            <p class="text-slate-300 text-sm mt-2">
+                                Basundhara Abasan, Hridaypu Station Road,
+                                Hridaypur, West Bengal, India, 700127
+                            </p>
+                        </div>
+                        <div class="p-5 bg-white/5 rounded-lg">
+                            <h3 class="font-semibold">🎓 Education</h3>
+                            <p class="text-slate-300 text-sm mt-2">
+                                B.Tech CSE (AI &amp; ML) — Brainware University
+                            </p>
+                        </div>
+                        <div class="p-5 bg-white/5 rounded-lg">
+                            <h3 class="font-semibold">💼 Open to</h3>
+                            <p class="text-slate-300 text-sm mt-2">
+                                Internships, Junior SDE roles, Collaboration on
+                                small projects
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="skills" class="py-20">
+                <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold mb-8 text-white">Skills</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <aside class="skills-roadmap">
+                            <h4 class="font-bold text-white mb-4 text-lg">
+                                Frontend Frameworks
+                            </h4>
+
+                            <div class="timeline" id="timeline-0">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="timeline-dot"
+                                    style="top: 0px"
+                                ></div>
+
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        HTML5
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        Semantic structure, accessibility best practices
+                                    </div>
+                                </div>
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        CSS3
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        Responsive layouts using Flexbox and Grid
+                                    </div>
+                                </div>
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        Tailwind
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        Utility-first styling, responsive design, custom theming
+                                    </div>
+                                </div>
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        ReactJS
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        Component-based architecture, hooks, state management, routing
+                                    </div>
+                                </div>
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        Angular
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        Components, templates, directives, basic routing
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <aside class="skills-roadmap">
+                            <h4 class="font-bold text-white mb-4 text-lg">
+                                Backend Frameworks
+                            </h4>
+                            <div class="timeline" id="timeline-1">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="timeline-dot"
+                                    style="top: 0px"
+                                ></div>
+
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        Django
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        MVT architecture, ORM, authentication, CRUD operations
+                                    </div>
+                                </div>
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        Flask
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        Lightweight backend development, routing, REST basics
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <aside class="skills-roadmap">
+                            <h4 class="font-bold text-white mb-4 text-lg">
+                                Languages / Tools
+                            </h4>
+                            <div class="timeline" id="timeline-2">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="timeline-dot"
+                                    style="top: 0px"
+                                ></div>
+
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        Python
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        Data structures, OOP, backend scripting
+                                    </div>
+                                </div>
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        JavaScript
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        DOM manipulation, modern syntax, async basics
+                                    </div>
+                                </div>
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        TypeScript
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        Static typing, interfaces, safer JavaScript development
+                                    </div>
+                                </div>
+                                <div class="roadmap-step">
+                                    <div class="text-white font-semibold">
+                                        Git & GitHub
+                                    </div>
+                                    <div class="text-slate-400 text-sm">
+                                        Version control, branching, collaboration workflows
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="py-20 border-t border-white/5">
+                <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="text-3xl font-bold text-white">Projects</h2>
+                        <a
+                            href="https://github.com/bikrampy"
+                            target="_blank"
+                            class="text-slate-200 bg-white/5 px-3 py-1 rounded font-medium hover:bg-white/10 transition-colors"
+                        >
+                            View all on GitHub
+                        </a>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                    >
+                        <article
+                            class="p-5 bg-white/5 rounded-lg border border-white/5 hover:scale-[1.02] transition-transform duration-300"
+                        >
+                            <h3 class="font-semibold text-white text-lg">
+                                Switch - An E-Commerce Website
+                            </h3>
+                            <p class="text-slate-300 text-sm mt-2">
+                                Developed a full-stack e-commerce platform using
+                                Python and Django, featuring a complete customer
+                                journey from browsing to checkout.
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <a
+                                    href="#"
+                                    class="px-3 py-2 rounded text-sm bg-white/10 hover:bg-white/20 text-white transition-colors"
+                                >
+                                    Live Demo
+                                </a>
+                                <a
+                                    href="https://github.com/bikrampy/SwitchECommerce"
+                                    target="_blank"
+                                    class="px-3 py-2 rounded text-sm bg-white/10 hover:bg-white/20 text-white transition-colors"
+                                >
+                                    Source Code
+                                </a>
+                            </div>
+                        </article>
+
+                        <article
+                            class="p-5 bg-white/5 rounded-lg border border-white/5 hover:scale-[1.02] transition-transform duration-300"
+                        >
+                            <h3 class="font-semibold text-white text-lg">
+                                Tech It Easy
+                            </h3>
+                            <p class="text-slate-300 text-sm mt-2">
+                                Flask-based blog posting app with CRUD
+                                functionality and user authentication.
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <a
+                                    href="#"
+                                    class="px-3 py-2 rounded text-sm bg-white/10 hover:bg-white/20 text-white transition-colors"
+                                >
+                                    Live Demo
+                                </a>
+                                <a
+                                    href="https://github.com/bikrampy/TechItEasy"
+                                    target="_blank"
+                                    class="px-3 py-2 rounded text-sm bg-white/10 hover:bg-white/20 text-white transition-colors"
+                                >
+                                    Source Code
+                                </a>
+                            </div>
+                        </article>
+
+                        <article
+                            class="p-5 bg-white/5 rounded-lg border border-white/5 hover:scale-[1.02] transition-transform duration-300"
+                        >
+                            <h3 class="font-semibold text-white text-lg">
+                                BeingBifrons - Portfolio
+                            </h3>
+                            <p class="text-slate-300 text-sm mt-2">
+                                Fully responsive, modern portfolio using HTML,
+                                Tailwind CSS, and JavaScript.
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <a
+                                    href="https://www.beingbifrons.shop/"
+                                    target="_blank"
+                                    class="px-3 py-2 rounded text-sm bg-white/10 hover:bg-white/20 text-white transition-colors"
+                                >
+                                    Live Demo
+                                </a>
+                                <a
+                                    href="https://github.com/bikrampy/Portfolio"
+                                    target="_blank"
+                                    class="px-3 py-2 rounded text-sm bg-white/10 hover:bg-white/20 text-white transition-colors"
+                                >
+                                    Source Code
+                                </a>
+                            </div>
+                        </article>
+                        <article
+                            class="p-5 bg-white/5 rounded-lg border border-white/5 hover:scale-[1.02] transition-transform duration-300"
+                        >
+                            <h3 class="font-semibold text-white text-lg">
+                                Password Manager
+                            </h3>
+                            <p class="text-slate-300 text-sm mt-2">
+                                A modern password generator and manager built with React and React Router. The app allows users to generate secure passwords with customizable options, save them with associated site names, and manage them efficiently.
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <a
+                                    href="https://password-manager-lovat-nine.vercel.app/"
+                                    target="_blank"
+                                    class="px-3 py-2 rounded text-sm bg-white/10 hover:bg-white/20 text-white transition-colors"
+                                >
+                                    Live Demo
+                                </a>
+                                <a
+                                    href="https://github.com/bikrampy/PasswordManager"
+                                    target="_blank"
+                                    class="px-3 py-2 rounded text-sm bg-white/10 hover:bg-white/20 text-white transition-colors"
+                                >
+                                    Source Code
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="py-20 border-t border-white/5">
+                <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold text-white">Contact</h2>
+                    <p class="text-slate-300 mt-2">
+                        Want to work together or say hi? Drop a message.
+                    </p>
+
+                    <form id="contact-form" class="mt-6 max-w-2xl space-y-4">
+                        <div>
+                            <label for="name" class="sr-only">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your name"
+                                required
+                                class="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-slate-200 placeholder-slate-400 focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue transition-colors"
+                            />
+                        </div>
+
+                        <div>
+                            <label for="mail" class="sr-only">Email</label>
+                            <input
+                                type="email"
+                                id="mail"
+                                name="mail"
+                                placeholder="Your email"
+                                required
+                                class="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-slate-200 placeholder-slate-400 focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue transition-colors"
+                            />
+                        </div>
+
+                        <div>
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                placeholder="Message"
+                                required
+                                class="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-slate-200 placeholder-slate-400 focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue transition-colors"
+                            ></textarea>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <button
+                                type="submit"
+                                id="send-btn"
+                                class="px-5 py-3 rounded-xl-strong glow-btn glow-btn--strong font-medium text-white"
+                            >
+                                Send message
+                            </button>
+                            <span
+                                id="contact-status"
+                                class="text-sm text-slate-400"
+                            ></span>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer class="border-t border-white/5 py-8 mt-10">
+            <div
+                class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400 text-sm"
+            >
+                <p>
+                    © <span id="year"></span> BeingBifrons. All rights reserved.
+                </p>
+            </div>
+        </footer>
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,194 @@
+:root {
+  /* We are using 'primary-blue' in Tailwind, but keeping the original variable for custom CSS */
+  --first-color: #60a5fa;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+.glow-btn {
+  /* Tailwind equivalent: rounded-[12px] or rounded-xl */
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  /* 💡 Key glass-morphism effect not available in single Tailwind class */
+  backdrop-filter: blur(8px) saturate(1.05);
+  -webkit-backdrop-filter: blur(8px) saturate(1.05);
+  box-shadow: 0 6px 22px rgba(96, 165, 250, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+.glow-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(96, 165, 250, 0.18),
+    0 0 36px rgba(124, 58, 237, 0.06);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
+}
+.glow-btn--strong:hover {
+  box-shadow: 0 14px 60px rgba(96, 165, 250, 0.22),
+    0 0 80px rgba(124, 58, 237, 0.08);
+}
+/* Custom utility for stronger border-radius */
+.rounded-xl-strong {
+  border-radius: 14px;
+}
+
+/* The rest of the hero image and animation custom styles */
+.anim-only-btn {
+  background: #ffffff;
+  color: #0b0b0b;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  box-shadow: none !important;
+}
+.anim-only-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: none !important;
+}
+.hero-image-wrap {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(
+      1200px 600px at 100% 0%,
+      rgba(96, 165, 250, 0.06),
+      transparent 20%
+    ),
+    linear-gradient(180deg, rgba(17, 24, 39, 0.4), rgba(2, 6, 23, 0.35));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.hero-image-wrap img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  transition: transform 700ms cubic-bezier(0.2, 0.9, 0.2, 1), filter 500ms;
+  will-change: transform;
+}
+@keyframes float-slow {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.01);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+      600px 200px at 85% 20%,
+      rgba(255, 255, 255, 0.03),
+      transparent 20%
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent 40%);
+  mix-blend-mode: screen;
+}
+.hero-wrap-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+/* 1. The Card Container */
+.skills-roadmap {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 1rem;
+  border-radius: 0.75rem; /* Tailwind: rounded-xl */
+  height: 100%; /* Ensure cards match height */
+}
+
+/* 2. The Timeline Wrapper */
+.timeline {
+  position: relative; /* CRITICAL: Creates the coordinate system */
+  padding-left: 28px; /* Make space for the line on the left */
+}
+
+/* 3. The Vertical Line */
+.timeline-line {
+  position: absolute; /* Take it out of normal flow */
+  left: 14px; /* Center it within the padding-left area */
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 2px;
+}
+
+/* 4. The Glowing Dot (The "Elevator") */
+.timeline-dot {
+  position: absolute;
+  left: 6px; /* Center it over the line (14px line center - 7px is half dot width? No, math below) */
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 22px rgba(96, 165, 250, 0.12),
+    0 0 18px rgba(96, 165, 250, 0.06);
+  backdrop-filter: blur(6px);
+  z-index: 5; /* Sit on top of the line */
+}
+
+/* 5. The Content Items */
+.roadmap-step {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem; /* Space between skills */
+}
+
+/* Add inside <style> tag */
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* =========================================
+   PRELOADER
+   ========================================= */
+.animate-shimmer {
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}
